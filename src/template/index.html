@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mini Carto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2/leaflet.css">
+</head>
+
+<body>
+    <noscript>
+      You need to enable JavaScript to run this website.
+    </noscript>
+    <!-- Preventing FOUC here -->
+    <div style="visibility: hidden;" class="container">
+        <h1 class="title"><a href="/">Mini Carto</a></h1>
+
+        <form class="form form-config">
+            <div class="control">
+                <textarea class="config textarea" placeholder="Paste here your JSON config"></textarea>
+            </div>
+            <div class="control has-text-centered">
+                <button class="button is-link">Load map</button>
+            </div>
+            <a class="button is-loading spinner hidden">Loading</a>
+            <p class="error-message"></p>
+        </form>
+
+        <div class="content hidden-transparent">
+            <div id="map"></div>
+            <div class="controls">
+                <div class="layer-filters"></div>
+                <div class="sql-forms"></div>
+            </div>
+        </div>
+
+        <form class="form form-sql-template hidden">
+            <div class="field is-horizontal field-sql">
+                <div class="field-label is-normal">
+                    <label class="label"></label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" placeholder="SQL code" />
+                        </div>
+                        <div class="control has-text-centered">
+                            <button class="button is-link button-update">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="error-message"></p>
+        </form>
+
+    </div>
+</body>
+
+</html>
