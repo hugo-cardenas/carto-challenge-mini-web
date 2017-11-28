@@ -1,6 +1,6 @@
 import 'bulma/css/bulma.css';
 import '../css/style.styl';
-import createMap from './map';
+import createMap from 'mini-carto-lib';
 
 const
     CLASS_HIDDEN = 'hidden',
