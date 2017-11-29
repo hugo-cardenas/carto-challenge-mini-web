@@ -74,7 +74,7 @@ const createSQLForm = (map, index, sql) => {
         updateButton.classList.add('is-loading');
         const sql = form.querySelector('input').value;
         try {
-            await map.getLayer(index).setSQL(sql);
+            await map.getLayers()[index].setSQL(sql);
         } catch (error) {
             form.querySelector('.error-message').innerText = error.message;
         } finally {
@@ -94,12 +94,13 @@ const createLayerButton = (map, index) => {
 
     elem.onclick = event => {
         const button = event.target;
+        const layer = map.getLayers()[index];
         if (button.value === 'hide') {
-            map.getLayer(index).hide();
+            layer.hide();
             button.value = 'show';
             button.classList.remove('is-primary');
         } else {
-            map.getLayer(index).show();
+            layer.show();
             button.value = 'hide';
             button.classList.add('is-primary');
         }
